@@ -8,5 +8,5 @@
 4. 了解技术前沿：Word2Vec、LDA、XGBoost、RNN等。
 5. 熟悉sklearn、tensorflow和底层的模型计算框架如MPI、MKL、ps等。
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+
 
