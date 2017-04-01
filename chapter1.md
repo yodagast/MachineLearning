@@ -26,7 +26,9 @@ r2-score函数：
 
 * **模型评价**
 
-本章节参考： \[sklearn metrics\]\([http://scikit-learn.org/stable/modules/model\_evaluation.html\#log-loss](http://scikit-learn.org/stable/modules/model_evaluation.html#log-loss)\)
+本章节参考：sklearn metrics[^1]、Spark metics[^2]
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+[^1]: [http://scikit-learn.org/stable/modules/model\_evaluation.html\#log-loss](#)
+
+[^2]: http://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
 
