@@ -10,7 +10,7 @@
 
 log-loss log损失函数：$$ L(y,p)=-log(y,p)= -y*log(p)+(1-y)*log(1-p)$$
 
-MSE 平方损失函数：$$$$![](/assets/import_MSE.png)
+MSE 平方损失函数：![](/assets/import_MSE.png)
 
 0-1损失函数：![](http://scikit-learn.org/stable/_images/math/99a78b8e380d522470d2a5a5a9b157d3ea141e98.png "L\_{0-1}\(y\_i, \hat{y}\_i\) = 1\(\hat{y}\_i \not= y\_i\)")
 
