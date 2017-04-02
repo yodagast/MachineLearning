@@ -20,7 +20,7 @@ f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)
 
 r2-score函数：
 
-* **惩罚项：**逻辑回归中$$L_1 / L_2$$ 惩罚项；XGBoost方法中的树的树数量进行惩罚。
+* **惩罚项：**逻辑回归惩罚项；XGBoost方法中的树的树数量进行惩罚。
 
 * **模型评价**
 
