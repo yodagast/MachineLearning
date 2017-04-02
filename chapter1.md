@@ -8,23 +8,29 @@
 
 * **损失函数和打分函数：**损失函数是用来量化模型预测值和真实值差距的方式，越小越好，打分函数反之。通常在分类模型（二分类和多分类模型）、回归模型、ranking模型、聚类模型等问题。介绍一些简单的损失函数和得分函数。
 
-log-loss log损失函数：$$ L(y,p)=-log(y,p)= -y*log(p)+(1-y)*log(1-p)$$
+        log-loss log损失函数：$$ L(y,p)=-log(y,p)= -y*log(p)+(1-y)*log(1-p)$$
 
-MSE 平方损失函数：![](/assets/import_MSE.png)
+        MSE 平方损失函数：![](/assets/import_MSE.png)
 
-0-1损失函数：![](http://scikit-learn.org/stable/_images/math/99a78b8e380d522470d2a5a5a9b157d3ea141e98.png "L\_{0-1}\(y\_i, \hat{y}\_i\) = 1\(\hat{y}\_i \not= y\_i\)")
+       0-1损失函数：![](http://scikit-learn.org/stable/_images/math/99a78b8e380d522470d2a5a5a9b157d3ea141e98.png "L\_{0-1}\(y\_i, \hat{y}\_i\) = 1\(\hat{y}\_i \not= y\_i\)")
 
-ROC-score函数：
+       ROC-score函数：
 
-f1-score函数：
+      f1-score函数：
 
-r2-score函数：
+      r2-score函数：
 
-* **惩罚项**
-
-常见的惩罚项：逻辑回归中$$L_1 / L_2$$ 惩罚项；XGBoost方法中的树的树数量进行惩罚。
+* **惩罚项：**逻辑回归中$$L_1 / L_2$$ 惩罚项；XGBoost方法中的树的树数量进行惩罚。
 
 * **模型评价**
 
 本章节参考：sklearn metrics[^1]、Spark metics[^2]
+
+http://scikit-learn.org/stable/modules/classes.html\#module-sklearn.metrics
+
+http://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
+
+
+
+
 
