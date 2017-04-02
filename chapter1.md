@@ -16,7 +16,7 @@ MSE 平方损失函数
 
 ROC-score函数：
 
-f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall
+f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)
 
 r2-score函数：
 
