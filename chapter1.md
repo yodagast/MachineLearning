@@ -24,7 +24,7 @@ r2-score函数：
 
 * **模型评价**
 
-本章节参考：sklearn metrics[^1]、Spark metics[^2]
+本章节模型评价指标参考：sklearn metrics[^1]、Spark metics[^2]
 
 [http://scikit-learn.org/stable/modules/classes.html\#module-sklearn.metrics](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
