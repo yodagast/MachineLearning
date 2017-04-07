@@ -8,7 +8,7 @@
 {\frac{\partial \varphi}{\partial z}}
 \end{pmatrix}")（1）
 
-梯度下降：随机权重weights，确定学习步长a，并计算函数的梯度，反复更新更新权重。
+梯度下降：随机权重weights，确定学习步长 \alpha，并计算函数的梯度，反复更新更新权重。其中J\(\)
 
 ![](/assets/import_weights.png) \(2\)
 
