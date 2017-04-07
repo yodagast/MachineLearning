@@ -4,10 +4,10 @@
 * [机器学习模型评价](chapter1.md)
 * [逻辑回归和梯度下降](second-chaptor.md)
 * [树和组合方法](third-chapter.md)
-* SVM
-* 神经网络模型
-* Word2Vec 
+* [SVM](svm.md)
+* [神经网络模型](shen-jing-wang-luo-mo-xing.md)
+* [Word2Vec ](word2vec.md)
 * [概率图模型](gai-lv-tu-mo-xing.md)
-* LDA
+* [LDA](lda.md)
 * 概率、统计和矩阵
 
