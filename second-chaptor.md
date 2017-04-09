@@ -16,7 +16,7 @@
 
 [![](https://github.com/endymecy/spark-ml-source-analysis/raw/master/最优化算法/梯度下降/imgs/1.3.png "1.3")](https://github.com/endymecy/spark-ml-source-analysis/blob/master/最优化算法/梯度下降/imgs/1.3.png)（3）
 
-**随机梯度下降算法SGD**：每次通过一个样本进行随机梯度迭代可能得到局部最优解。
+**随机梯度下降算法SGD**：每次通过一个样本进行随机梯度迭代可能得到局部最优解，未必使用所有的训练数据。
 
 ![](http://upload-images.jianshu.io/upload_images/1825085-a08b3af9b8250e20.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)（4）
 
