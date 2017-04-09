@@ -16,9 +16,9 @@ MSE : 用于线性回归损失函数计算。
 
 0-1损失函数: 朴素贝叶斯分类。
 
-ROC-score函数：
+ROC-score函数：通常只能用于二分类。
 
-f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)
+f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)可以用于二分类和多分类。
 
 r2-score函数：
 
