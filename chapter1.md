@@ -20,6 +20,8 @@ ROC-score函数：通常只能用于二分类。
 
 f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)可以用于二分类和多分类。
 
+F-Score 得分：$$ F =\(\beta^2+1\)\frac{precision \* recall}{\(\beta^2\)precision + recall} $$
+
 r2-score函数：
 
 **惩罚项：**逻辑回归惩罚项l1或者l2；树方法中的树的树叶子节点数量进行惩罚。
