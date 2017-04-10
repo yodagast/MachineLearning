@@ -18,9 +18,11 @@ $$y=argmaxp(y)\prod{p(x_i|y)} $$\(4\)
 
 ### 三种常用朴素贝叶斯模型
 
-多项式贝叶斯![](/assets/import-BNB.png) \(1\)
+伯努利贝叶斯![](/assets/import-BNB.png) \(1\)
 
-伯努利贝叶斯![](/assets/import-mNB.png) \(2\)
+多项式贝叶斯![](/assets/import-mNB.png) \(2\)
 
 高斯贝叶斯分类![](/assets/import-gNB.png) \(3\)
+
+多项式贝叶斯伯努利贝叶斯和高斯贝叶斯对计算$$p(x_i|y)$$ 有着不同的计算方式。多项式贝叶斯通常用于文本分类中，加入拉普拉斯平滑等方法（注：当 $$ \alpha=1$$ 时为拉普拉斯平滑）
 
