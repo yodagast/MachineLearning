@@ -22,7 +22,5 @@ $$y=argmaxp(y)\prod{p(x_i|y)} $$\(4\)
 
 伯努利贝叶斯![](/assets/import-mNB.png) \(2\)
 
-高斯贝叶斯分类![](/assets/import-mNB.png)![](/assets/import-gNB.png) \(3\)
-
-
+高斯贝叶斯分类![](/assets/import-gNB.png) \(3\)
 
