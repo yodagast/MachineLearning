@@ -18,9 +18,9 @@ MSE : 用于线性回归损失函数计算。
 
 ROC-score函数：通常只能用于二分类。
 
-f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)可以用于二分类和多分类。
+f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)可以用于二分类和多分类。f1得分还可以分为micro，macro和weight三种打分函数。其中macro是每个类的p和r进行平均计算，micro对于每个实例做平均计算，weight不仅考虑每个类别的precision和recall得分，还考虑类的不均衡性。通常macro-f1使用较多。
 
-F-Score 得分：$$ F =\(\beta^2+1\)\frac{precision \* recall}{\(\beta^2\)precision + recall} $$
+F-Score 得分：$$ F =(\beta^2+1)\frac{precision * recall}{\beta^2precision + recall} $$。当$$ \beta$ =1 $$时，F-score即为F1score。
 
 r2-score函数：
 
