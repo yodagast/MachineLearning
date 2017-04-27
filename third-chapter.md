@@ -18,5 +18,5 @@ XGBoost算法是Kaggle等实战比赛中最常用的算法之一。特点包括�
 
 **\(3\)Learning Objects & Metrics：**根据learning task的不同，设置不同的learning objective，选择不同的learning metrics。（1）regression，分为逻辑回归和线性回归，log-loss和rmse.\(2\)binary classification错误率、precision/recall/f1、accuracy等。\(3\) multiclass classification可以采用merror、precision/recall/f1等。（4）ranking 可以采用MAP、NDCG等指标。
 
-**\(4\)其他：**（1）Xgboost提供了一个sklearn接口。（2）XGBoosti提供了一个交叉验证的
+**\(4\)其他：**（1）Xgboost提供了一个sklearn接口。（2）XGBoost提供了一个交叉验证方法。
 
