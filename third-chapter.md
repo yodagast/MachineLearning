@@ -12,3 +12,9 @@
 
 XGBoost算法是Kaggle等实战比赛中最常用的算法之一。特点包括：（1）目标函数的损失函数部分通过泰勒二阶展开近似；（2）定义了树的复杂度并作为惩罚项添加到目标函数中；（3）分裂节点处通过结构打分和分割损失动态生长；（4）便于处理稀疏数据，通过行采样和列采样避免过拟合；（5）可以处理分类、回归和排序问题。
 
+**\(1\) DMatrix: **DMatrix是xgboost中内置的矩阵数据结构。支持libsvm、CSR sparse Matrix或者普通的nparray矩阵。DMatrix支持设置矩阵中每一列的权重，补全缺失值等。
+
+**\(2\)Booster：** booster是xgboost的学习模型，包括gblinear、gbtree和DART，linear是线性模型，而后两者是树模型。通常树模型包括参数如行采样、列采样、树的深度、个数等。而linear model通常需要设置L1/L2惩罚项。
+
+**\(3\)Learning Objects & Metrics：**根据learning task的不同，设置不同的learning objective，选择不同的learning metrics。（1）regression，分为逻辑回归和线性回归，log-loss和rmse.\(2\)binary classification错误率、precision/recall/f1、accuracy等。\(3\) multiclass classification可以采用merror、precision/recall/f1等。（4）ranking 可以采用MAP、NDCG等指标。
+
