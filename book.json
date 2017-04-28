@@ -1,6 +1,7 @@
 {
   "language": "zh",
   "plugins": [
+   "katex",
     "latex-codecogs"
    ]
 }
