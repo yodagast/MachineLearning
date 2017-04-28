@@ -17,7 +17,7 @@ Word2Vec是一种基本的词向量表示，通过降维将一个高维度的词
 
 $$ p(w_t|context)=p(w_t|w_{(t-k)}...w_{(t-1)},w_{(t+1)}...w_{(t+k)})$$
 
-* Skip-Gram。和CBOW相反，Skip-Gram在模型预测中，基于第t个词预测第t+j个词。skip-gram通过最大化文档的平均log 概率来进行模型预测。skip-gram采用$$p(w_{t+j}|w_t)$$来预测t+j个位置上的单词。对$$ p(w_{t+j}|w_t) $$采用softmax模型。
+* Skip-Gram。和CBOW相反，Skip-Gram在模型预测中，基于第t个词预测第t+j个词。skip-gram通过最大化所有文档的 average log probability来进行模型预测。skip-gram采用$$p(w_{t+j}|w_t)$$来预测t+j个位置上的单词。对$$ p(w_{t+j}|w_t) $$采用softmax模型。
 
 对于这两个模型的详细解释可以参照原paper进行阅读理解。下图有一个直观的解释。
 
