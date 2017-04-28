@@ -19,7 +19,7 @@ $$ p(w_t|context)=p(w_t|w_{(t-k)}...w_{(t-1)},w_{(t+1)}...w_{(t+k)})$$
 
 * Skip-Gram。和CBOW相反，Skip-Gram在模型预测中，基于第t个词预测上下文。skip-gram通过最大化文档的平均log 概率来进行模型预测。skip-gram采用$$p(w_{t+j}|w_t)$$来预测t+j个位置上的单词。对$$ p(w_{t+j}|w_t) $$采用softmax模型。
 
-
+对于这两个模型的详细解释可以参照原paper进行阅读理解。
 
 **\(4\)Hierarchical Softmax**
 
