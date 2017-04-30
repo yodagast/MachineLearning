@@ -30,6 +30,10 @@ r2-score函数：
 
 本章节模型评价指标参考：sklearn metrics[^1]、Spark metics[^2]
 
+**信息检索系统评价：**信息检索系统通常不仅要关注检索结果和检索关键词之间的相关性，还要关注检索结果之间的顺序关系。常见的评价指标包括p@k，MAP，MRR。precision/recall和NDCG等指标。
+
+
+
 [http://scikit-learn.org/stable/modules/classes.html\#module-sklearn.metrics](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
 [http://spark.apache.org/docs/latest/mllib-evaluation-metrics.html](http://spark.apache.org/docs/latest/mllib-evaluation-metrics.html)
