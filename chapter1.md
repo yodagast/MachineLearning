@@ -20,7 +20,7 @@ ROC-score函数：通常只能用于二分类。
 
 f1-score函数：F1 = 2 \* \(precision \* recall\) / \(precision + recall\)可以用于二分类和多分类。f1得分还可以分为micro，macro和weight三种打分函数。其中macro是每个类的p和r进行平均计算，micro对于每个实例做平均计算，weight不仅考虑每个类别的precision和recall得分，还考虑类的不均衡性。通常macro-f1使用较多。
 
-F-Score 得分：$$ F =(\beta^2+1)\frac{precision * recall}{\beta^2precision + recall} $$。当$$ \beta=1 $$时，F-score即为F1score。
+F-Score 得分：$$ F =(\beta^2+1)\frac{precision * recall}{\beta^2precision + recall} $$。当$$ \beta=1 $$时，F-score即为F1-score。
 
 r2-score函数：
 
@@ -31,8 +31,6 @@ r2-score函数：
 本章节模型评价指标参考：sklearn metrics[^1]、Spark metics[^2]
 
 **信息检索系统评价：**信息检索系统通常不仅要关注检索结果和检索关键词之间的相关性，还要关注检索结果之间的顺序关系。常见的评价指标包括p@k，MAP，MRR。precision/recall和NDCG等指标。
-
-
 
 [http://scikit-learn.org/stable/modules/classes.html\#module-sklearn.metrics](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
