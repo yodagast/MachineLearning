@@ -11,4 +11,5 @@
 * [LDA](lda.md)
 * 概率、统计和矩阵
 * [naive-bayes](naive-bayes.md)
+* [了解Spark](le-jie-spark.md)
 
