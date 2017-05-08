@@ -19,7 +19,9 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 * **DataSet**：结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
 
 ### Spark SQL和HiveOnSpark
+* HiveOnSpark 是将Hive的计算引擎由MapReduce改为Spark，提供DAG执行计划。类似的项目有HiveOnTez。
 
+* SparkSQL 可以读取Hive表、RDD、JSON外部数据表等，使用SparkSQL进行计算。SparkSQL提供的SQL查询函数不如Hive丰富。
 
 
 
