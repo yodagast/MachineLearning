@@ -14,6 +14,8 @@ RDD的容错恢复机制：lineage和checkpoint。lineage追踪RDD在DAG计算�
 
 checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图信息，在下一次调用Driver程序时可以使用checkpoint中的数据。而persist\(StorageLevel.DISK\_ONLY\)只能保存RDD在硬盘中，当程序结束后blockManager会删除这些persist的数据。
 
+广播变量Broadcast 广播变量是一个read-only的数据对象，可以将数据发送到每个计算节点上，便于进行join等操作。有两种类型的广播变量HttpBroadcast和TorrentBroadcast。
+
 * **DataFrame**：将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
 
 * **DataSet**：结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
