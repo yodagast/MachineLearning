@@ -32,6 +32,8 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 * Spark的Shuffle机制有sort-based和hashmap两种。
 
 
-参考资料：https://github.com/JerryLead/SparkInternals
+参考资料：
+关于Spark内部原理：https://github.com/JerryLead/SparkInternals
+关于Spark Shuffle：http://jerryshao.me/architecture/2014/01/04/spark-shuffle-detail-investigation/
 
 
