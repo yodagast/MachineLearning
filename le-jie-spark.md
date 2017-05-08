@@ -1,8 +1,6 @@
 ### Spark基本概念
 
-* **RDD**
-
-RDD是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD有两种方法：（1）普通对象转化，（2）从文件系统或者HDFS读取。
+**RDD** 是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD有两种方法：（1）普通对象转化，（2）从文件系统或者HDFS读取。
 
 常见的RDD操作分为transformation和action: transformation对RDD进行转化，如map、filter等操作，transformation生成的RDD只依赖父RDD称之为narrow dependency，通常是惰性的，action对RDD进行计算，如reduce、collect，join等，如c=a.join(b)有可能产生wide dependency或ShuffleDependency。一些常见的操作包括：
 
@@ -16,11 +14,9 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 
 广播变量Broadcast 广播变量是一个read-only的数据对象，可以将数据发送到每个计算节点上，便于进行join等操作。有两种类型的广播变量HttpBroadcast和TorrentBroadcast。
 
-* **DataFrame**
-将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
+**DataFrame** 将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
 
-* **DataSet**
-结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
+**DataSet** 结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
 
 ### Spark SQL和HiveOnSpark
 * HiveOnSpark 是将Hive的计算引擎由MapReduce改为Spark，提供DAG执行计划，加快了Hive的查询速度，类似的项目有HiveOnTez。
