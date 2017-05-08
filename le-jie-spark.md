@@ -2,9 +2,9 @@
 
 * **RDD**
 
-RDD是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD可以：（1）普通对象转化，（2）从文件系统或者HDFS读取。
+RDD是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD有两种方法：（1）普通对象转化，（2）从文件系统或者HDFS读取。
 
-常见的RDD操作分为transformation和action: transformation对RDD进行转化，如map、filter等操作，通常是惰性的，action对RDD进行计算，如reduce、collect等。一些常见的操作包括：
+常见的RDD操作分为transformation和action: transformation对RDD进行转化，如map、filter等操作，transformation生成的RDD只依赖父RDD称之为narrow dependency，通常是惰性的，action对RDD进行计算，如reduce、collect，join等，如c=a.join(b)有可能产生wide dependency或ShuffleDependency。一些常见的操作包括：
 
 Map、MapPartition\(对每个分区中的内容进行处理，每个分区中的内容以Iterator\[T\]接受\)、MapValues（对k-v中的每个values进行函数map操作）、flatMap（对每个RDD元素生产一个RDD数组类似Hive中的explode）、flastMapValues\(对于k-v中的每个values进行flatMap\)、Reduce、reduceByKey\(对k-v中相同k的values进行reduce操作，类似mysql的group函数\)。
 
@@ -27,7 +27,11 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 
 * SparkSQL 可以读取Hive表、RDD、JSON外部数据表等，使用SparkSQL进行计算。SparkSQL提供的SQL查询函数不如Hive丰富。
 
+### Spark和Hadoop的Shuffle比较
+* hadoop的Shuffle机制是基于排序方法的。
+* Spark的Shuffle机制有sort-based和hashmap两种。
 
 
+参考资料：https://github.com/JerryLead/SparkInternals
 
 
