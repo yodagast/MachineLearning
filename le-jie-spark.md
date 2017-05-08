@@ -16,9 +16,11 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 
 广播变量Broadcast 广播变量是一个read-only的数据对象，可以将数据发送到每个计算节点上，便于进行join等操作。有两种类型的广播变量HttpBroadcast和TorrentBroadcast。
 
-* **DataFrame**：将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
+* **DataFrame**
+将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
 
-* **DataSet**：结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
+* **DataSet**
+结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
 
 ### Spark SQL和HiveOnSpark
 * HiveOnSpark 是将Hive的计算引擎由MapReduce改为Spark，提供DAG执行计划，加快了Hive的查询速度，类似的项目有HiveOnTez。
