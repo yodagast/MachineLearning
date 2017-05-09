@@ -11,5 +11,5 @@ $$ L=\sum_{i=0}^n {max(0,1-w^Txy_i)}+Cw^Tw$$。
 
 * SVM的核函数
 
-对于线性不可分的模型，可以考虑核函数技巧对数据进行转化，将低维的数据映射到高维度的空间中，转化为线性可分模型。一个核函数K(Kernel Function) 指的是 其中x，y是n维的输入值，f是从n到m(m>>n)的映射，<x,y>是点乘。
+对于线性不可分的模型，可以考虑核函数技巧对数据进行转化，将低维的数据映射到高维度的空间中，转化为线性可分模型。一个核函数K(Kernel Function) 指的是 其中x，y是n维的输入值，k(x,y)=(f(x),f(y))是从n到m(m>>n)的映射，(x,y)是点乘。
  http://www.eric-kim.net/eric-kim-net/posts/1/kernel_trick.html
