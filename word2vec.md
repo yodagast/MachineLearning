@@ -30,4 +30,5 @@ $$ p(w_t|context)=p(w_t|w_{(t-k)}...w_{(t-1)},w_{(t+1)}...w_{(t+k)})$$
 Hierarchical Softmax通过二叉树进行分类，使一连串的二分类用来进行多分类计算。过程类似于：是否是名词-&gt;是否是物品-&gt;是否是水果-&gt;是否是橘子。
 
 除了Hierarchical Softmax进行模型的预测。作者还如何进行负采样（negative sampling）、如何降低频繁词的概率等方法。详情参考作者的论文和代码。
+参考资料：http://www.cnblogs.com/wei-li/p/Word2Vec.html
 
