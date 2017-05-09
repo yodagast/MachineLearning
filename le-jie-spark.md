@@ -10,9 +10,9 @@ RDD编译时类型安全，能检查出类型错误便于进行函数式编程�
 
 RDD的容错恢复机制：lineage和checkpoint。lineage追踪RDD在DAG计算图中的依赖，并基于检查点进行恢复。具体来说Spark提供cache/persist和checkpoint。当调用cache函数时，Spark将这个数据对象保存在内存中，RDD转化为persistRDD。persist可以提供多种storageLevel的存储。如果是MEMORY\_ONLY，persist和cache方法相同。通过unpersist可以手动移除持久化数据。
 
-checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图信息，在下一次调用Driver程序时可以使用checkpoint中的数据。而persist\(StorageLevel.DISK\_ONLY\)只能保存RDD在硬盘中，当程序结束后blockManager会删除这些persist的数据。
+checkpoint将RDD保存在HDFS中并遗忘lineage信息，改变了RDD的DAG图信息，在下一次调用Driver程序时可以使用checkpoint中的数据。而persist\(StorageLevel.DISK\_ONLY\)只能保存RDD在硬盘中，当程序结束后blockManager会删除这些persist的数据。
 
-广播变量Broadcast 广播变量是一个read-only的数据对象，可以将数据发送到每个计算节点上，便于进行join等操作。有两种类型的广播变量HttpBroadcast和TorrentBroadcast。
+广播变量Broadcast是一个read-only的数据对象，可以将数据发送到每个计算节点上，便于进行join等操作。有两种类型的广播变量HttpBroadcast和TorrentBroadcast。
 
 **DataFrame** 将每一行的数据存在一个schema对象中，此外DataFrame是off-heap的，直接受操作系统管理。但DataFrame不是类型安全的，如果将某个列的int类型和string进行比较，编译时期不会报错。
 
@@ -26,7 +26,6 @@ checkpoint将RDD保存在HDFS中并遗忘lineagei信息，改变了RDD的DAG图�
 ### Spark和Hadoop的Shuffle比较
 * hadoop的Shuffle机制是基于排序方法的。
 * Spark的Shuffle机制有sort-based和hashmap两种。
-
 
 参考资料：
 关于Spark内部原理：https://github.com/JerryLead/SparkInternals
