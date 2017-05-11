@@ -19,7 +19,7 @@ $$ L=-\sum_{i=0}^n {a_i(y_i(w^Tx+b)-1)}+\frac{1}{2}w^Tw （2）$$
    $$\sum_{i=0}^n a_iy_i=0$$
 
 （4）对于（2）式，可以考虑引入松弛变量解决错误分类问题。
-$$ L=C\sum_{i=0}^n {\epsilon_i}+\frac{1}{2}w^Tw $$
+$$ L=C\sum_{i=0}^n {\epsilon_i}+\frac{1}{2}w^Tw$$
 $$s.t. y_i(wx_i+b) \ge 1-\epsilon_i $$
 
 
