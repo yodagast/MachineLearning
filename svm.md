@@ -16,5 +16,7 @@ $$ L=\sum_{i=0}^n {max(0,1-w^Txy_i)}+Cw^Tw$$。
 常见的Kernel 函数有：高斯核函数、多项式核函数、线性核函数（PCA）等。
 * **SVM的SMO算法**
 
+SMO算法通过启发式方法选择两个$$α_i,α_j$$当变量，固定其他$$α_k$$，然后用解析的方法求解两个变量的二次规划问题。具体原理未知。
+
 Kernel方法的参考文章：http://crsouza.com/2010/03/17/kernel-functions-for-machine-learning-applications/#kernel_trick
 
