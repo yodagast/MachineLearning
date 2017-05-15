@@ -7,6 +7,6 @@
 moving_var = moving_var * momentum + data_var * (1 - momentum)
 
 此外BatchNorm还接受两个参数进行调整。 $$ y_i=\frac{x_i-mean(x)}{\sqrt var(x)}*\gamma_i +\beta_i$$
-- 
+- Pooling 池化。pool的类型包括average pooling、max pooling、sum pooling等。
 
 
