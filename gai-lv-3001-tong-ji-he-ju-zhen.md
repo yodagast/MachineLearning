@@ -2,10 +2,8 @@
 
 - 概率密度函数(probability density function)：描述一个随机变量在某个确定值附近的可能性。
 - 累计分布函数（cumulative distribution function）：是PDF的概率积分，完整描述一个随机变量的概率分布。
-- 二项分布和正态分布
-
+- 二项分布
 二项分布(binomial) 是进行$$n$$次独立重复实验中成功次数的概率分布。
-
 
 - 泊松分布和指数分布
 
