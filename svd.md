@@ -11,3 +11,16 @@
 计算方法:将$$A^T×A$$作为一个$$n×n$$的矩阵，进行特征分解得到$$(A^T×A)u_i=\lambda_i u_i$$.
 
 同理$$A×A^T$$作为一个$$m×m$$的矩阵，进行特征分解得到$$(A×A^T)v_i=\lambda_i v_i$$
+
+- **CUR分解算法**
+
+SVD算法计算比较耗时，存储$$U,R$$比较占用空间。CUR分解是另外一个选择，其目标是：找到输入矩阵的一个“尽可能好”的分解为三个矩阵的乘积A = CUR，SVD分解是完美的分解（通过允许误差来加速计算）。其中：
+
+CC矩阵由AA矩阵中的列构成
+RR矩阵由AA矩阵中的行构成
+UU矩阵由C,RC,R的交集进行伪逆求得
+
+参考资料:
+http://www.cnblogs.com/leftnoteasy/archive/2011/01/19/svd-and-applications.html
+http://www.ryanzhang.info/data-mining/cur-dimension-reduction-cur%E5%88%86%E8%A7%A3-%E9%99%8D%E7%BB%B4/
+
