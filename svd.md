@@ -21,6 +21,6 @@ RR矩阵由AA矩阵中的行构成
 UU矩阵由C,RC,R的交集进行伪逆求得
 
 参考资料:
-http://www.cnblogs.com/leftnoteasy/archive/2011/01/19/svd-and-applications.html
-http://www.ryanzhang.info/data-mining/cur-dimension-reduction-cur%E5%88%86%E8%A7%A3-%E9%99%8D%E7%BB%B4/
+PCA & SVD: http://www.cnblogs.com/leftnoteasy/archive/2011/01/19/svd-and-applications.html
+CUR: http://www.ryanzhang.info/data-mining/cur-dimension-reduction-cur%E5%88%86%E8%A7%A3-%E9%99%8D%E7%BB%B4/
 
