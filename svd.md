@@ -20,6 +20,10 @@ CC矩阵由AA矩阵中的列构成
 RR矩阵由AA矩阵中的行构成
 UU矩阵由C,RC,R的交集进行伪逆求得
 
+- **Matrix Factorization**
+
+MF将user-item组成的稀疏矩阵进行降维度处理，学习user和item的embedding表示。ALS经常被用来解决MF问题，能高性能切有效的并行化计算。对于一个user和一个item之间评分的计算可以采用userVector点乘itemVector进行计算；如对于item推荐，可以选择最相似的topK个商品即可。对于MF矩阵分解的模型的评价，可以采用MAP、AP@K等算法。
+
 参考资料:
 PCA & SVD: http://www.cnblogs.com/leftnoteasy/archive/2011/01/19/svd-and-applications.html
 CUR: http://www.ryanzhang.info/data-mining/cur-dimension-reduction-cur%E5%88%86%E8%A7%A3-%E9%99%8D%E7%BB%B4/
