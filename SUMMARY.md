@@ -13,4 +13,5 @@
 * [了解Spark](le-jie-spark.md)
 * [SVD](svd.md)
 * [基于用户投票的算法](ji-yu-yong-hu-tou-piao-de-suan-fa.md)
+* [Scala杂项](scalaza-xiang.md)
 
