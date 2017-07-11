@@ -12,4 +12,5 @@
 * [概率、统计和矩阵](gai-lv-3001-tong-ji-he-ju-zhen.md)
 * [naive-bayes](naive-bayes.md)
 * [了解Spark](le-jie-spark.md)
+* [Scala杂项](scalaza-xiang.md)
 
