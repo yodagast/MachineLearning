@@ -27,6 +27,13 @@ checkpoint将RDD保存在HDFS中并遗忘lineage信息，改变了RDD的DAG图�
 * hadoop的Shuffle机制是基于排序方法的。
 * Spark的Shuffle机制有sort-based和hashmap两种。
 
+### Spark内存管理
+Spark内存布局分为Execution内存和Storage内存。1.5以前使用StaticMemoryManager，但这种方式不能适应不同记得计算场景。1.6以后采用UnifiedMemoryManager。
+**Storage内存**，用来缓存Task数据、在Spark集群中传输（Propagation）内部数据；
+**Execution内存**，用于满足Shuffle、Join、Sort、Aggregation计算过程中对内存的需求。
+使用UnifiedMemoryManager可以动态伸缩。在storage和execution中抽象出soft boundary。当某一个内存区中内存用量不足的时候，可以从另一个内存区中借用。
+
+
 参考资料：
 
 关于Spark内部原理：https://github.com/JerryLead/SparkInternals
