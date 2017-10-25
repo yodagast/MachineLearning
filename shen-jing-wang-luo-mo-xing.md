@@ -11,4 +11,7 @@ moving_var = moving_var * momentum + data_var * (1 - momentum)
 - Pooling 池化。pool的类型包括average pooling、max pooling、sum pooling等。
 - Embedding层，只能作为模型的第一层。
 
+#### CNN基本原理
+
+
 
