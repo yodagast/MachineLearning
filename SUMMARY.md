@@ -10,8 +10,8 @@
 * [LDA](lda.md)
 * [概率、统计和矩阵](gai-lv-3001-tong-ji-he-ju-zhen.md)
 * [naive-bayes](naive-bayes.md)
-* [了解Spark](le-jie-spark.md)
 * [SVD](svd.md)
 * [基于用户投票的算法](ji-yu-yong-hu-tou-piao-de-suan-fa.md)
 * [Scala杂项](scalaza-xiang.md)
+* [了解Spark](le-jie-spark.md)
 
