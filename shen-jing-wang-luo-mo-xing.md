@@ -21,7 +21,7 @@ $$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
 不同的梯度下降优化算法可以参考：
 ![](/assets/relation.png)
 
-#### CNN基本原理
+#### 常见的神经网络重要网络层
 CNN的两种网络层：卷积层（Convolution）滑动窗口函数和池化层（Pooling）。
 
 
