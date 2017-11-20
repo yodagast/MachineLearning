@@ -1,6 +1,6 @@
 ### 介绍Scala中的各个奇技淫巧
 
-- **Future和Promise区别**
+* **Future和Promise区别**
 
 所谓Future，是一种用于指代某个尚未就绪的值的对象。而这个值，往往是某个计算过程的结果：
 
@@ -11,3 +11,8 @@ Future的就位分为两种情况：
 
 * 当Future带着某个值就位时，我们就说该Future携带计算结果成功就位。
 * 当Future因对应计算过程抛出异常而就绪，我们就说这个Future因该异常而失败。
+
+Promise 承诺返回Future计算的值，允许你在 Future 里放入一个值，不过只能做一次，Future 一旦完成，就不能更改了。
+
+
+
