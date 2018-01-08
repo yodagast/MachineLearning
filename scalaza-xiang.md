@@ -9,7 +9,7 @@ def relu(x:Double)=if(x<0) 0.0 else x
 将函数作为第一类对象（和普通的数据类型、对象一样可以赋值、作为参数、当做返回值），支持lambda表达式、惰性计算、闭包、表达式等特性。
 
 * **Scala集合**
-（1）Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。
+（a）Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。
 常见的集合类型包括：
  (1) List构造列表的两个基本单位是 Nil 和 ::，Nil表示为一个空列表。对于List有三个基本操作：（1）head返回列表的第一个元素，（2）tail返回除了第一个元素外的其他元素；（3）isEmpty判断列表是否为空。
  (2) Set元素不重复。
@@ -21,7 +21,7 @@ def relu(x:Double)=if(x<0) 0.0 else x
   def get: T
   def getOrElse(t: T): T
 }Option本身是泛型的，并且有两个子类： Some[T] 或 None。
- （2）一些常见的函数组合子(Functional Combinators)包括：
+ （b）一些常见的函数组合子(Functional Combinators)包括：
  map/foreach/zip/filter/partition/find/drop/fold/flatMap。用法略
 
 * **Scala类型系统**
