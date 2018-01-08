@@ -6,7 +6,7 @@ val tmp=for (i <- 1 to 3) yield i     //Seq(1,2,3)
 def relu(x:Double)=if(x<0) 0.0 else x  
 
 * **函数式编程**
-
+将函数作为第一类对象（和普通的数据类型、对象一样可以赋值、作为参数、当做返回值），支持lambda表达式、惰性计算、闭包、表达式等特性。
 
 * **Scala集合**
 
