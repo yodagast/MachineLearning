@@ -7,6 +7,7 @@ def relu(x:Double)=if(x<0) 0.0 else x
 
 * **函数式编程**
 
+
 * **Scala集合**
 
 * **Scala类型系统**
