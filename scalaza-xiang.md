@@ -9,6 +9,13 @@ def relu(x:Double)=if(x<0) 0.0 else x
 将函数作为第一类对象（和普通的数据类型、对象一样可以赋值、作为参数、当做返回值），支持lambda表达式、惰性计算、闭包、表达式等特性。
 
 * **Scala集合**
+Scala实现了两套集合系统，并通过一些函数组合子（Functional Combinators）对集合进行操作。
+常见的集合类型包括：
+ (1) List
+ (2) Set
+ (3) Tuple
+ (4) Map
+ (5) Option
 
 * **Scala类型系统**
 
