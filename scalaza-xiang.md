@@ -8,7 +8,6 @@
 val tmp=for (i <- 1 to 3) yield i     //Seq(1,2,3)
 def relu(x:Double)=if(x<0) 0.0 else x  
 
-
 * **Scala集合**
 （a）Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。
 常见的集合类型包括：
