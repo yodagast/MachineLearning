@@ -9,20 +9,36 @@ val tmp=for (i <- 1 to 3) yield i     //Seq(1,2,3)
 def relu(x:Double)=if(x<0) 0.0 else x  
 
 * **Scala集合**
-（a）Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。
-常见的集合类型包括：
- (1) List构造列表的两个基本单位是 Nil 和 ::，Nil表示为一个空列表。对于List有三个基本操作：（1）head返回列表的第一个元素，（2）tail返回除了第一个元素外的其他元素；（3）isEmpty判断列表是否为空。
- (2) Set元素不重复。
- (3) Tuple元组中可以包含不同类型的元素。
- (4) Map 包含三个基本操作：keys、values、isEmpty
- (5) Option是一个表示有可能包含值得容器，实现了一个基本的接口。
+**（a）**Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。常见的集合类型包括：
+ - List构造列表的两个基本单位是 Nil 和 ::，Nil表示为一个空列表。对于List有三个基本操作：（1）head返回列表的第一个元素，（2）tail返回除了第一个元素外的其他元素；（3）isEmpty判断列表是否为空。
+ - Set元素不重复。
+ - Tuple元组中可以包含不同类型的元素。
+ - Map 包含三个基本操作：keys、values、isEmpty
+ - Option是一个表示有可能包含值得容器，实现了一个基本的接口。
  trait Option[T] {
   def isDefined: Boolean
   def get: T
   def getOrElse(t: T): T
 }Option本身是泛型的，并且有两个子类： Some[T] 或 None。
- （b）一些常见的函数组合子(Functional Combinators)包括：
+ 
+ **（b）**一些常见的函数组合子(Functional Combinators)包括：
  map/foreach/zip/filter/partition/find/drop/fold/flatMap。用法略
+ 
+   **（c）**Scala集合和Java集合之间的相互转化。用asScala 装饰常用的Java集合以和用asJava 方法装饰Scala集合.
+  - 相互转化
+  scala.collection.Iterable = java.lang.Iterable
+scala.collection.Iterable = java.util.Collection
+scala.collection.Iterator = java.util.{ Iterator, Enumeration }
+scala.collection.mutable.Buffer = java.util.List
+scala.collection.mutable.Set = java.util.Set
+scala.collection.mutable.Map = java.util.{ Map, Dictionary }
+scala.collection.mutable.ConcurrentMap = java.util.concurrent.ConcurrentMap
+ 
+  - 单项转化
+  scala.collection.Seq => java.util.List
+scala.collection.mutable.Seq => java.util.List
+scala.collection.Set => java.util.Set
+scala.collection.Map => java.util.Map
 
 * **Scala类型系统**
 
@@ -32,6 +48,7 @@ def relu(x:Double)=if(x<0) 0.0 else x
 逆变contravariant  |C[T] 是 C[T’]的子类  |[-T]
 不变invariant	   |C[T] 和 C[T’]无关    |[T]
 Scala的类型系统必须同时解释类层次和多态性。类层次结构可以表达子类关系。在混合OO和多态性时，一个核心问题是：如果T’是T一个子类，Container[T’]应该被看做是Container[T]的子类吗？变性（Variance）注解允许你表达类层次结构和多态类型之间的关系。子类型关系的真正含义：对一个给定的类型T，如果T’是其子类型，你能替换它吗？（参照引用）
+
 * **Future和Promise区别**
 
 所谓Future，是一种用于指代某个尚未就绪的值的对象。而这个值，往往是某个计算过程的结果：
