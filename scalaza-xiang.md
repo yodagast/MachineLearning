@@ -26,6 +26,11 @@ def relu(x:Double)=if(x<0) 0.0 else x
 
 * **Scala类型系统**
 
+名称               |含义Scala            |标记
+------------       | -------------      |   ------------
+协变covariant      |C[T’]是 C[T] 的子类  |[+T]
+逆变contravariant  |C[T] 是 C[T’]的子类  |[-T]
+不变invariant	   |C[T] 和 C[T’]无关    |[T]
 
 * **Future和Promise区别**
 
