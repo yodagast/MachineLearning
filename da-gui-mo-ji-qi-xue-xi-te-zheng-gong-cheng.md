@@ -13,7 +13,7 @@
 （6）分桶如将年龄转化为[小孩、青年、中年、老人]等。
 （7）One-hot Encoding：如果某個特徵有 m 个值（例如 Taipei, Beijing, Tokyo），那它 one-hot encode 之後就成为长度为 m 的向量
 （8）Count Vectorization：给定一个Array("a", "b", "b", "c", "a")计算获得这个Array的Count Vector (3,[0,1,2],[2.0,2.0,1.0])
-（9）Feature Hashing：以 user id 為例，透過一個 hash function 把每一個 user id 映射到 (hashed1_, hashed_2, ..., hashed_m) 的某個值，容易出现特征冲突。
+（9）Feature Hashing：以 user id 為例，透過一個 hash function 把每一個 user id 映射到 (hashed1_, hashed_2, ..., hashed_m) 的某個值，容易出现特征冲突。Locality Sensitive Hashing包含一系列hash算法：（1）Bucketed Random Projection for  Euclidean Distance；（2）MinHash for Jaccard Distance
 （10）Category Embedding
 （11）Entity/relation/path Embedding
 
