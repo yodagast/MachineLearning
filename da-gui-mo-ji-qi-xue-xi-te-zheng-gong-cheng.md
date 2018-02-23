@@ -23,3 +23,5 @@
 （3）n-gram
 （4）Polynomial Expansion
 （5）StringToIndexer/IndexToString
+（6）TF-IDF
+（7）Word2Vec
