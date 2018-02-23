@@ -17,7 +17,7 @@
 （10）Category Embedding
 （11）Entity/relation/path Embedding
 
-其他特征工程
+**其他特征工程**
 （1）Tokenizer
 （2）StopWordsRemover
 （3）n-gram
