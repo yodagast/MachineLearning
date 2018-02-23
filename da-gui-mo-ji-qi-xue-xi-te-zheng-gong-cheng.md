@@ -4,7 +4,7 @@
    dense-matrix ：（1）drop 有缺失值的rows；（2）numberical数据：均值、中位数、0或-999等进行补全。（3）categorical 数据：众数、改为others类别
    sparse-matrix 默认缺失值为0，通常采用如libsvm的数据格式进行数据编码。
 
-**Feature Scaling特征缩放**
+**Feature Engineer**
 （1）标准化x-mean/stdv；
 (2)归一化将数据缩放到[0,1]或者[-1,1]之间；
 （3）Rounding，将浮点数值转化为分类特征；
