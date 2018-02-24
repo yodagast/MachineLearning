@@ -11,7 +11,7 @@
 
 - Embedding层 嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4],[20]]->[[0.25,0.1],[0.6,-0.2]]，通常用在文本分类模型中。
 
-- Recurrent循环层。
+- Recurrent循环层（//TODO）。
 
 - 损失函数，度量训练中真实值和预测值之间的差值。常见的损失函数包括：mean_squared_error、mean_absolute_error、hinge、log-loss
 其中的计算过程包括：
@@ -41,7 +41,7 @@ $$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
 
 
 
-### 神经网模型初探
+### 神经网模型其他概念
 - 神经网络的分类。依据学习的网络架构来说分为：前向式架构（Feed Forward NetWork）、回馈式架构（Recurrent Network）和强化式架构（Reinforcement Network）。依据学习策略分类包括监督式学习分类和无监督式学习分类等。
 - 神经网络的基本结构包括：输入层、隐藏层和输出层。更详细来说：全连接（FullyConnected）、激活（Activation）、卷积Convolution、Pooling、SoftmaxOutput、sotfmax和log_softmax输出层。
 - 常见激活函数：softmax、sigmod、tanh、relu等。注意输入数据只能进行一次的非线性变换。
