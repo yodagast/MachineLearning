@@ -1,3 +1,37 @@
+### Keras 基本概念
+- core模块，包括全连接层、激活层、Dropout层、Flatten层、Reshape层、Lambda层、ActivityRegularizer层、Masking层等
+
+- 卷积层（Convolutional）：[例子](http://i.imgur.com/KPyqPOB.gif)
+- 池化（Pooling）对卷积层进行池化采样。包括maxPooling、AveragePooling。
+- BatchNormalization 对上一层的输出规范化，使其均值为0，方差为1。作用：（1）加速收敛 （2）控制过拟合，可以少用或不用Dropout和正则 （3）降低网络对初始化权重不敏感 （4）允许使用较大的学习率
+- Dropout层 Dropout将在训练过程中每次更新参数时按一定概率（rate）随机断开输入神经元，其他数值被随机缩放到1/(1-rate)，Dropout层用于防止过拟合。
+给定一个矩阵array([[3., 0.5,  -0.5,  2., 7.],                   [2., -0.4,   7.,  3., 0.2]])，在执行Dropout后生成矩阵。
+[[ 3.75,   0.625, -0.,     2.5,    8.75 ]
+ [ 2.5,   -0.5,    8.75,   3.75,   0.   ]]
+
+- Embedding层 嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4],[20]]->[[0.25,0.1],[0.6,-0.2]]，通常用在文本分类模型中。
+
+- Recurrent循环层。
+
+- 损失函数，度量训练中真实值和预测值之间的差值。常见的损失函数包括：mean_squared_error、mean_absolute_error、hinge、log-loss
+其中的计算过程包括：
+Logloss: L(L|P(Y|X))=-logP(Y|X)
+hinge-loss:L(L|P(Y|X))=max(0,1-Yp(Y|X))
+adaboost指数损失函数：
+$$f_m(x)=f_{m-1}(x)+\alpha_m G_m(x)$$
+$$\arg \min_{\alpha,G}=\sum_{i=0}^{N}exp[-y_{i}(f_{m-1}(x_i)+\alpha G(x_{i}))]$$
+指数损失函数的标准形式如：
+$$L(y,f(x))=\exp[-yf(x)]$$
+给定n个样本的损失函数为：
+$$L(y|f(x))=\frac{1}{n}\sum_{i=1}^{n}\exp[-y_if(x_i)]$$
+
+- 优化器
+
+- 性能评估Metrics
+
+
+
+
 ### 神经网模型初探
 - 神经网络的分类。依据学习的网络架构来说分为：前向式架构（Feed Forward NetWork）、回馈式架构（Recurrent Network）和强化式架构（Reinforcement Network）。依据学习策略分类包括监督式学习分类和无监督式学习分类等。
 - 神经网络的基本结构包括：输入层、隐藏层和输出层。更详细来说：全连接（FullyConnected）、激活（Activation）、卷积Convolution、Pooling、SoftmaxOutput、sotfmax和log_softmax输出层。
@@ -22,9 +56,10 @@ $$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
 ![](/assets/relation.png)
 
 #### 常见的神经网络重要网络层
-CNN的两种网络层：卷积层（Convolution）滑动窗口函数和池化层（Pooling）。
-
+CNN的两种网络层：卷积层（Convolution）滑动窗口函数和池化层（Pooling）
 RNN的时间网络预测
+
+
 
 
 
