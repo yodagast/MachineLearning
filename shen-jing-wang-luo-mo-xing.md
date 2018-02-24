@@ -27,8 +27,17 @@ $$L(y|f(x))=\frac{1}{n}\sum_{i=1}^{n}\exp[-y_if(x_i)]$$
 
 - 优化器:如何进行梯度下降算法学习权重特征。
 
-- 性能评估Metrics
+可以大致分为一阶梯度下降算法和二阶梯度下降算法，具体来说可以有以下几种梯度下降算法：（1）随机梯度下降算法。（2）小批量梯度下降（Mini Batch Gradient Descent）（3）动量（Momentum）（4）Nesterov梯度加速法（5）Adagrad方法（6）AdaDelta方法（7）Adam算法（Adaptive Moment Estimation）；也有基于在线学习的梯度下降学习算法如FTRL。
+**一阶梯度下降算法**对于梯度下降算法（每次更新参数 ωω 时, 都使用整个训练集的数据）、小批量随机梯度下降算法（每次更新参数时, 使用 50-256个样本）和随机梯度下降算法（每次以一个样本, 而不是整个数据集来计算梯度），可以参考：http://kissg.me/2017/07/23/gradient-descent/#bgd
+**基于动量的梯度下降算法**：优化相关方向的训练和弱化无关方向的振荡，来加速SGD训练。这种新方法将上个步骤中更新向量的分量 $$\alpha$$ 添加到当前更新向量。其他内容参考https://blog.slinuxer.com/2016/09/sgd-comparison
+$$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
 
+不同的梯度下降优化算法可以参考：
+![](/assets/relation.png)
+
+
+- 性能评估Metrics
+常见的模型评估方式包括分类、回归和排序模型评价方法。最常见的模型评价方法是AUC模型评价，通过对于tpr和fpr进行积分，也包括ROC曲线等一系列相关定义。另一模型评价函数包括precision和recall曲线。而在排序算法中常见的评价指标包括AUC、MAP、NDCG和Hit@K等。
 
 
 
@@ -44,16 +53,6 @@ moving_var = moving_var * momentum + data_var * (1 - momentum)
 此外BatchNorm还接受两个参数进行调整。 $$ y_i=\frac{x_i-mean(x)}{\sqrt var(x)}*\gamma_i +\beta_i$$
 - Pooling 池化。pool的类型包括average pooling、max pooling、sum pooling等。
 - Embedding层，只能作为模型的第一层。
-
-#### 神经网络优化算法
-可以大致分为一阶梯度下降算法和二阶梯度下降算法
-具体来说可以有以下几种梯度下降算法：（1）随机梯度下降算法。（2）小批量梯度下降（Mini Batch Gradient Descent）（3）动量（Momentum）（4）Nesterov梯度加速法（5）Adagrad方法（6）AdaDelta方法（7）Adam算法（Adaptive Moment Estimation）
-**一阶梯度下降算法**对于梯度下降算法（每次更新参数 ωω 时, 都使用整个训练集的数据）、小批量随机梯度下降算法（每次更新参数时, 使用 50-256个样本）和随机梯度下降算法（每次以一个样本, 而不是整个数据集来计算梯度），可以参考：http://kissg.me/2017/07/23/gradient-descent/#bgd
-**基于动量的梯度下降算法**：优化相关方向的训练和弱化无关方向的振荡，来加速SGD训练。这种新方法将上个步骤中更新向量的分量 $$\alpha$$ 添加到当前更新向量。其他内容参考https://blog.slinuxer.com/2016/09/sgd-comparison
-$$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
-
-不同的梯度下降优化算法可以参考：
-![](/assets/relation.png)
 
 #### 常见的神经网络重要网络层
 CNN的两种网络层：卷积层（Convolution）滑动窗口函数和池化层（Pooling）
