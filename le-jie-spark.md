@@ -1,3 +1,5 @@
+### Spark调优技巧
+- Spark不同的配置类型，包括：（1）Spark的应用环境如配置模式（client和cluster）、master的URL、Driver的信息等；（2）运行时环境，包含的Java类库、Java虚拟机的配置等；（3）Shuffle的策略：map文件是否压缩，文件缓存等。（4）Spark UI的配置。（5）压缩和序列化的配置，通常的尽量使用官方推荐的Kryo序列化库，广播变量、shuffle过程中的数据都默认使用lz4压缩，而RDD只有序列化后才能压缩，通常使用压缩会增加性能开销。（5）内存管理配置：包括Spark的执行内存（execution）和存储内存(storage),是否开启offHeap，已经offHeap的大小等。（6）动态分配（Dynamic Allocation），如配置initialExecutors/minExecutors/maxExecutors等，注意需要shuffle.service.enabled。（7）安全控制配置；（8）SparkSQL配置，包括配置spark.sql.codegen，从而获取更好的表达式查询速度。（9）Spark Streaming相关配置（略）。
 ### Spark基本概念
 
 **RDD** 是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD有两种方法：（1）普通对象转化，（2）从文件系统或者HDFS读取。
