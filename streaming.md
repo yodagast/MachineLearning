@@ -10,8 +10,7 @@
 (6)**Powerful computation model**: the framework should offer a programming model that does not restrict the user and allows a wide variety of applications
 (7) Low overhead of the fault tolerance mechanism in the absence of failures
 
-- **Apache Storm** ( upstream backup and record acknowledgements )
-
-- **Apache Spark**(Micro batches)
+- **Apache Storm** ( upstream backup and record acknowledgements, At-least-once,**low latency**,low thor****ughput)
+- **Spark Streaming**(Micro batches,**exactly-once**,low latency,**high throughput**)
 - **Google Cloud Dataflow** (Transactional updates)
-- **Apache Flink** (Distributed Snapshots)
+- **Apache Flink** (Distributed Snapshots,**low latency**, **high throughput**, exactly-once)
