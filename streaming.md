@@ -1,6 +1,6 @@
 ###流式计算
 
-- 流式计算主要问题
+#### 流式计算主要问题
 
 (1) **Exactly-once guarantees**: state in stateful operators should be correctly restored after a failure
 (2) **Low latency**: the lower the better. Many applications require sub-second latencyhigh-thorughput(Spark DStream/1S-10S, Structured Streaming/1ms, Flink/1ms)   
@@ -10,7 +10,12 @@
 (6)**Powerful computation model**: the framework should offer a programming model that does not restrict the user and allows a wide variety of applications
 (7) Low overhead of the fault tolerance mechanism in the absence of failures
 
-- **Apache Storm** ( upstream backup and record acknowledgements, At-least-once,**low latency**,low thor****ughput)
+#### 不同系统对比
+
+- **Apache Storm** ( upstream backup and record acknowledgements, At-least-once,**low latency**,low thorughput)
 - **Spark Streaming**(Micro batches,**exactly-once**,low latency,**high throughput**)
 - **Google Cloud Dataflow** (Transactional updates)
-- **Apache Flink** (Distributed Snapshots,**low latency**, **high throughput**, exactly-once)
+- **Apache Flink/Strucured Streaming** (Distributed Snapshots,**low latency**, **high throughput**, exactly-once)：Flink’s variation of the Chandy Lamport algorithm[](https://blog.acolyer.org/2015/04/22/distributed-snapshots-determining-global-states-of-distributed-systems/) periodically draws state snapshots of a running stream topology, and stores these snapshots to durable storage (e.g., to HDFS or an in-memory file system)
+
+
+

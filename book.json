@@ -2,6 +2,10 @@
   "language": "zh",
   "plugins": [
    "katex",
-    "latex-codecogs"
+    "latex-codecogs",
+    "bibtex-indexed-cite"
    ]
+   "bibtex-indexed-cite": {
+            "path": "/"
+        }
 }
