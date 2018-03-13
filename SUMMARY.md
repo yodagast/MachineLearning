@@ -15,4 +15,5 @@
 * [Scala杂项](scalaza-xiang.md)
 * [了解Spark](le-jie-spark.md)
 * [大规模机器学习特征工程](da-gui-mo-ji-qi-xue-xi-te-zheng-gong-cheng.md)
+* [streaming](streaming.md)
 
