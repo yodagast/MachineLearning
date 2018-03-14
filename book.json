@@ -5,7 +5,4 @@
     "latex-codecogs",
     "bibtex-indexed-cite"
    ]
-   "bibtex-indexed-cite": {
-            "path": "/"
-        }
 }
