@@ -20,9 +20,10 @@
 #### backpressure
 
 
-参照：（1）Flink blog https://blog.acolyer.org/2015/04/22/distributed-snapshots-determining-global-states-of-distributed-systems/
+参照：（1）Flink 分布式快照算法 https://blog.acolyer.org/2015/04/22/distributed-snapshots-determining-global-states-of-distributed-systems/
 （2）YAHOO Spark/Storm/Flink对比https://www.slideshare.net/HadoopSummit/performance-comparison-of-streaming-big-data-platforms
 （3）反压测试 https://www.linkedin.com/pulse/enable-back-pressure-make-your-spark-streaming-production-lan-jiang/
+（4）Spark Streaming 系统关键点 https://www.gitbook.com/book/jaceklaskowski/spark-structured-streaming/details
 
 
 
