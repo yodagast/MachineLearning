@@ -17,9 +17,12 @@
 - **Google Cloud Dataflow** (Transactional updates)
 - **Apache Flink/Strucured Streaming** (Distributed Snapshots,**low latency**, **high throughput**, exactly-once)：Flink’s variation of the [Chandy Lamport algorithm](https://blog.acolyer.org/2015/04/22/distributed-snapshots-determining-global-states-of-distributed-systems/) periodically draws state snapshots of a running stream topology, and stores these snapshots to durable storage (e.g., to HDFS or an in-memory file system),regular data processing always keeps going, processing events as they come, while checkpoints happen in the background.(和Spark Streaming的不同，Streaming需要定时写checkpoint到hdfs，可能产生瓶颈)
 
+#### backpressure
 
-参照：（1）[YAHOO Spark/Storm/Flink对比](https://www.slideshare.net/HadoopSummit/performance-comparison-of-streaming-big-data-platforms)
-（2）
+
+参照：（1）Flink blog https://blog.acolyer.org/2015/04/22/distributed-snapshots-determining-global-states-of-distributed-systems/
+（2）YAHOO Spark/Storm/Flink对比https://www.slideshare.net/HadoopSummit/performance-comparison-of-streaming-big-data-platforms
+（3）反压测试 https://www.linkedin.com/pulse/enable-back-pressure-make-your-spark-streaming-production-lan-jiang/
 
 
 
