@@ -1,6 +1,6 @@
 * CCKS2018
-  * http://www.ccks2018.cn, 
-  * 10th May, 18th May
+  * http://www.ccks2019.cn, 
+  * 18th May 2019
 * NLPCC2018
   * http://tcci.ccf.org.cn/conference/2018/
   * 8th May
