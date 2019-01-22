@@ -19,4 +19,5 @@
 * [机器学习会议](ji-qi-xue-xi-hui-yi.md)
 * [Attention](attention.md)
 * [GitFlow](gitflow.md)
+* [高效沟通](gao-xiao-gou-tong.md)
 
