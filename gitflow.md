@@ -37,10 +37,11 @@ git show// 显示某次提交的内容
 git reset <file>// 某个文件索引会回滚到最后一次提交， C → B
 git reset// 索引会回滚到最后一次提交， C → B
 git reset --hard // 索引会回滚到最后一次提交， C → B → A
+ git reset --hard origin/master //放弃本地修改，保持和master版本一致
 
 git checkout // 从 index 复制到 workspace， B → A
 git checkout -- files // 文件从 index 复制到 workspace， B → A
-git checkout HEAD -- files // 文件从 < span class="built_in">local repository 复制到 workspace， C → A
+git checkout HEAD -- files // 文件从 local repository 复制到 workspace， C → A
 
 ##### 分支相关
 git checkout -b branch_name // 创建名叫“branch_name” 的分支，并切换过去 
