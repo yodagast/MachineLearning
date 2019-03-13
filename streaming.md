@@ -10,6 +10,16 @@
 (6)**Powerful computation model**: the framework should offer a programming model that does not restrict the user and allows a wide variety of applications
 (7) Low overhead of the fault tolerance mechanism in the absence of failures
 
+#### Strucured streaming
+(1) offset tracking in WAL: 
+(2) state management:
+(3) fault-tolerant sources and sinks:
+- data and metadata in system needs to be recoverbale/replayable
+- track offsets by writing the offset range of each execution to a write ahead log in HDFS; reads log to recover from failures, and re-execute exact range of offsets.
+- fault-tolerant state: intermediate state data is maintained in versioned, key-value maps in spark workers, backed by HDFS.
+- fault-tolerant sources/sink: source are by design replayable and generate the exactly same data given offsets recovered by planner; sink are by design idempotent(幂等) and hadles re-executions to avoid double committing the output.
+
+
 #### 不同系统对比
 
 - **Apache Storm** ( upstream backup and record acknowledgements, At-least-once,**low latency**,low thorughput)
