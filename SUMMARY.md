@@ -20,6 +20,7 @@
 * [Attention](attention.md)
 * [GitFlow](gitflow.md)
 * [高效沟通](gao-xiao-gou-tong.md)
-* [QA](qa.md)
+* [KBQA](qa.md)
 * [K8S](k8s.md)
+* [亲密关系](qin-mi-guan-xi.md)
 
