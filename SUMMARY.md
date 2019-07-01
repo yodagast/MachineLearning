@@ -22,6 +22,6 @@
 * [高效沟通](gao-xiao-gou-tong.md)
 * [KBQA](qa.md)
 * [K8S](k8s.md)
-* [亲密关系](qin-mi-guan-xi.md)
 * [embedding算法](embeddingsuan-fa.md)
+* [亲密关系](qin-mi-guan-xi.md)
 
