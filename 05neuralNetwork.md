@@ -2,14 +2,18 @@
 - core模块，包括全连接层、激活层、Dropout层、Flatten层、Reshape层、Lambda层、ActivityRegularizer层、Masking层等
 
 - 卷积层（Convolutional）：![](http://i.imgur.com/KPyqPOB.gif)
-- 池化（Pooling）对卷积层进行池化采样。包括maxPooling、AveragePooling。
-- BatchNormalization 对上一层的输出规范化，使其均值为0，方差为1。作用：（1）加速收敛 （2）控制过拟合，可以少用或不用Dropout和正则 （3）降低网络对初始化权重不敏感 （4）允许使用较大的学习率
-- Dropout层 Dropout将在训练过程中每次更新参数时按一定概率（rate）随机断开输入神经元，其他数值被随机缩放到1/(1-rate)，Dropout层用于防止过拟合。
-给定一个矩阵array([[3., 0.5,  -0.5,  2., 7.],                   [2., -0.4,   7.,  3., 0.2]])，在执行Dropout后生成矩阵。
-[[ 3.75,   0.625, -0.,     2.5,    8.75 ]
+- 池化（Pooling）对卷积层进行池化采样。包括maxPooling、AveragePooling等。
+- **BatchNormalization** 对上一层的输出规范化，使其均值为0，方差为1。作用：（1）加速收敛 （2）控制过拟合，可以少用或不用Dropout和正则 （3）降低网络对初始化权重不敏感 （4）允许使用较大的学习率
+- **Dropout层** Dropout将在训练过程中每次更新参数时按一定概率（rate）随机断开输入神经元，其他数值被随机缩放到1/(1-rate)，Dropout层用于防止过拟合。
+给定一个矩阵
+>\[[3., 0.5,  -0.5,  2.,7.],                  
+[2., -0.4,   7.,  3., 0.2]]，
+
+在执行Dropout后生成矩阵。
+>\[[ 3.75,   0.625, -0.,     2.5,    8.75 ]
  [ 2.5,   -0.5,    8.75,   3.75,   0.   ]]
 
-- Embedding层 嵌入层将正整数（下标）转换为具有固定大小的向量，如[[4],[20]]->[[0.25,0.1],[0.6,-0.2]]，通常用在文本分类模型中。
+- Embedding层 嵌入层将正整数（下标）转换为具有固定大小的向量，如\[[4],[20]]->\[[0.25,0.1],[0.6,-0.2]]，通常用在文本分类模型中。
 
 - Recurrent循环层（//TODO）。
 
@@ -28,8 +32,10 @@ $$L(y|f(x))=\frac{1}{n}\sum_{i=1}^{n}\exp[-y_if(x_i)]$$
 - 优化器:如何进行梯度下降算法学习权重特征。
 
 可以大致分为一阶梯度下降算法和二阶梯度下降算法，具体来说可以有以下几种梯度下降算法：（1）随机梯度下降算法。（2）小批量梯度下降（Mini Batch Gradient Descent）（3）动量（Momentum）（4）Nesterov梯度加速法（5）Adagrad方法（6）AdaDelta方法（7）Adam算法（Adaptive Moment Estimation）；也有基于在线学习的梯度下降学习算法如FTRL。
+
 **一阶梯度下降算法**对于梯度下降算法（每次更新参数 ωω 时, 都使用整个训练集的数据）、小批量随机梯度下降算法（每次更新参数时, 使用 50-256个样本）和随机梯度下降算法（每次以一个样本, 而不是整个数据集来计算梯度），可以参考：http://kissg.me/2017/07/23/gradient-descent/#bgd
-**基于动量的梯度下降算法**：优化相关方向的训练和弱化无关方向的振荡，来加速SGD训练。这种新方法将上个步骤中更新向量的分量 $$\alpha$$ 添加到当前更新向量。其他内容参考https://blog.slinuxer.com/2016/09/sgd-comparison
+
+**基于动量的梯度下降算法**：优化相关方向的训练和弱化无关方向的振荡，来加速SGD训练。这种新方法将上个步骤中更新向量的分量 $\alpha$ 添加到当前更新向量。其他内容参考https://blog.slinuxer.com/2016/09/sgd-comparison
 $$V(t)=\alpha V(t−1)+η∇(θ).J(θ)$$
 
 不同的梯度下降优化算法可以参考：
@@ -57,8 +63,3 @@ moving_var = moving_var * momentum + data_var * (1 - momentum)
 #### 常见的神经网络重要网络层
 CNN的两种网络层：卷积层（Convolution）滑动窗口函数和池化层（Pooling）
 RNN的时间网络预测
-
-
-
-
-

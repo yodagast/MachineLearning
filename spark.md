@@ -1,33 +1,33 @@
 
 ### 介绍Scala中的各个奇技淫巧
 
-* **函数式编程**
+1. **函数式编程**
 将函数作为第一类对象（和普通的数据类型、对象一样可以赋值、作为参数、当做返回值），支持lambda表达式、惰性计算、闭包、表达式等特性。
 
-* **面向表达式编程**
+2. **面向表达式编程**
 在Scala中，任何代码块、函数、对象除非显示指明无返回值，否则都是会生成计算结果的。如：
-val tmp=for (i <- 1 to 3) yield i     //Seq(1,2,3)
+>val tmp=for (i <- 1 to 3) yield i     //Seq(1,2,3)
 def relu(x:Double)=if(x<0) 0.0 else x  
 
-* **Scala集合**
-**（a）**Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。常见的集合类型包括：
- - List构造列表的两个基本单位是 Nil 和 ::，Nil表示为一个空列表。对于List有三个基本操作：（1）head返回列表的第一个元素，（2）tail返回除了第一个元素外的其他元素；（3）isEmpty判断列表是否为空。
- - Set元素不重复。
- - Tuple元组中可以包含不同类型的元素。
- - Map 包含三个基本操作：keys、values、isEmpty
- - Option是一个表示有可能包含值得容器，实现了一个基本的接口。
- trait Option[T] {
+3. **Scala集合**
+3.1 Scala实现了两套集合系统（immutable and mutable）immutable 集合在添加删除元素时，生成一个新的集合，原来的集合并未发生变化，而mutable集合是对原有的集合进行操作，并未产生新集合。通过一些函数组合子（Functional Combinators）对集合进行操作。常见的集合类型包括：
+  - 3.1.1 List构造列表的两个基本单位是 Nil 和 ::，Nil表示为一个空列表。对于List有三个基本操作：（1）head返回列表的第一个元素，（2）tail返回除了第一个元素外的其他元素；（3）isEmpty判断列表是否为空。
+  - 3.1.2 Set元素不重复。
+  - 3.1.3 Tuple元组中可以包含不同类型的元素。
+  - 3.1.4 Map 包含三个基本操作：keys、values、isEmpty
+  - 3.1.5 Option是一个表示有可能包含值得容器，实现了一个基本的接口。Option本身是泛型的，并且有两个子类： Some[T] 或 None。
+>trait Option[T] {
   def isDefined: Boolean
   def get: T
   def getOrElse(t: T): T
-}Option本身是泛型的，并且有两个子类： Some[T] 或 None。
+}
 
- **（b）**一些常见的函数组合子(Functional Combinators)包括：
+ 3.2 一些常见的函数组合子(Functional Combinators)包括：
  map/foreach/zip/filter/partition/find/drop/fold/flatMap。用法略
 
-   **（c）**Scala集合和Java集合之间的相互转化。用asScala 装饰常用的Java集合以和用asJava 方法装饰Scala集合.
+ 3.3 Scala集合和Java集合之间的相互转化。用asScala 装饰常用的Java集合以和用asJava 方法装饰Scala集合.
   - 相互转化
-  scala.collection.Iterable = java.lang.Iterable
+  >scala.collection.Iterable = java.lang.Iterable
 scala.collection.Iterable = java.util.Collection
 scala.collection.Iterator = java.util.{ Iterator, Enumeration }
 scala.collection.mutable.Buffer = java.util.List
@@ -36,7 +36,7 @@ scala.collection.mutable.Map = java.util.{ Map, Dictionary }
 scala.collection.mutable.ConcurrentMap = java.util.concurrent.ConcurrentMap
 
   - 单项转化
-  scala.collection.Seq => java.util.List
+  >scala.collection.Seq => java.util.List
 scala.collection.mutable.Seq => java.util.List
 scala.collection.Set => java.util.Set
 scala.collection.Map => java.util.Map
@@ -54,13 +54,13 @@ Scala的类型系统必须同时解释类层次和多态性。类层次结构可
 
 所谓Future，是一种用于指代某个尚未就绪的值的对象。而这个值，往往是某个计算过程的结果：
 
-* 若该计算过程尚未完成，我们就说该Future未就位；
-* 若该计算过程正常结束，或中途抛出异常，我们就说该Future已就位。
+  1. 若该计算过程尚未完成，我们就说该Future未就位；
+  2. 若该计算过程正常结束，或中途抛出异常，我们就说该Future已就位。
 
 Future的就位分为两种情况：
 
-* 当Future带着某个值就位时，我们就说该Future携带计算结果成功就位。
-* 当Future因对应计算过程抛出异常而就绪，我们就说这个Future因该异常而失败。
+  1. 当Future带着某个值就位时，我们就说该Future携带计算结果成功就位。
+  2. 当Future因对应计算过程抛出异常而就绪，我们就说这个Future因该异常而失败。
 
 Promise 承诺返回Future计算的值，允许你在 Future 里放入一个值，不过只能做一次，Future 一旦完成，就不能更改了。
 
@@ -74,13 +74,13 @@ Promise 承诺返回Future计算的值，允许你在 Future 里放入一个值�
 
 **RDD** 是Spark的基本数据类型之一，类似单机编程中的数组，可以执行map、reduce等操作。RDD分区存储在不同的机器上保持冗余，可以被并行处理。创建RDD有两种方法：（1）普通对象转化，（2）从文件系统或者HDFS读取。
 
-常见的RDD操作分为transformation和action: transformation对RDD进行转化，如map、filter等操作，transformation生成的RDD只依赖父RDD称之为narrow dependency，通常是惰性的，action对RDD进行计算，如reduce、collect，join等，如c=a.join(b)有可能产生wide dependency或ShuffleDependency。一些常见的操作包括：
+常见的RDD操作分为**transformation和action**: transformation对RDD进行转化，如map、filter等操作，transformation生成的RDD只依赖父RDD称之为narrow dependency，通常是惰性的，action对RDD进行计算，如reduce、collect，join等，如c=a.join(b)有可能产生wide dependency或ShuffleDependency。一些常见的操作包括：
 
-Map、MapPartition\(对每个分区中的内容进行处理，每个分区中的内容以Iterator\[T\]接受\)、MapValues（对k-v中的每个values进行函数map操作）、flatMap（对每个RDD元素生产一个RDD数组类似Hive中的explode）、flastMapValues\(对于k-v中的每个values进行flatMap\)、Reduce、reduceByKey\(对k-v中相同k的values进行reduce操作，类似mysql的group函数\)。
+Map、MapPartition(对每个分区中的内容进行处理，每个分区中的内容以Iterator[T]接受)、MapValues（对k-v中的每个values进行函数map操作）、flatMap（对每个RDD元素生产一个RDD数组类似Hive中的explode）、flastMapValues(对于k-v中的每个values进行flatMap)、Reduce、reduceByKey(对k-v中相同k的values进行reduce操作，类似mysql的group函数)。
 
 RDD编译时类型安全，能检查出类型错误便于进行函数式编程。但由于RDD是val不变型对象，势必不断创建新的对象造成GC，其次是RDD序列化和反序列化的性能开销。（可以考虑惰性求值等方法进行编程）
 
-RDD的容错恢复机制：lineage和checkpoint。lineage追踪RDD在DAG计算图中的依赖，并基于检查点进行恢复。具体来说Spark提供cache/persist和checkpoint。当调用cache函数时，Spark将这个数据对象保存在内存中，RDD转化为persistRDD。persist可以提供多种storageLevel的存储。如果是MEMORY\_ONLY，persist和cache方法相同。通过unpersist可以手动移除持久化数据。
+RDD的**容错恢复机制**：**lineage和checkpoint**。lineage追踪RDD在DAG计算图中的依赖，并基于检查点进行恢复。具体来说Spark提供cache/persist和checkpoint。当调用cache函数时，Spark将这个数据对象保存在内存中，RDD转化为persistRDD。persist可以提供多种storageLevel的存储。如果是MEMORY\_ONLY，persist和cache方法相同。通过unpersist可以手动移除持久化数据。
 
 checkpoint将RDD保存在HDFS中并遗忘lineage信息，改变了RDD的DAG图信息，在下一次调用Driver程序时可以使用checkpoint中的数据。而persist\(StorageLevel.DISK\_ONLY\)只能保存RDD在硬盘中，当程序结束后blockManager会删除这些persist的数据。
 
@@ -91,13 +91,13 @@ checkpoint将RDD保存在HDFS中并遗忘lineage信息，改变了RDD的DAG图�
 **DataSet** 结合了RDD和DataFrame的优点。即可以获取每个columns的数据类型，也是编译时类型安全的。
 
 ### SparkSQL和HiveOnSpark
-* HiveOnSpark 是将Hive的计算引擎由MapReduce改为Spark，提供DAG执行计划，加快了Hive的查询速度，类似的项目有HiveOnTez。
+HiveOnSpark 是将Hive的计算引擎由MapReduce改为Spark，提供DAG执行计划，加快了Hive的查询速度，类似的项目有HiveOnTez。
 
-* SparkSQL 可以读取Hive表、RDD、JSON外部数据表等，使用SparkSQL进行计算。SparkSQL提供的SQL查询函数不如Hive丰富。
+SparkSQL 可以读取Hive表、RDD、JSON外部数据表等，使用SparkSQL进行计算。SparkSQL提供的SQL查询函数不如Hive丰富。
 
 ### Spark和Hadoop的Shuffle比较
-* hadoop的Shuffle机制是基于排序方法的。
-* Spark的Shuffle机制有sort-based和hashmap两种。
+hadoop的Shuffle机制是基于排序方法的。
+Spark的Shuffle机制有sort-based和hashmap两种。
 
 ### Spark内存管理
 Spark内存布局分为Execution内存和Storage内存。1.5以前使用StaticMemoryManager，但这种方式不能适应不同记得计算场景。1.6以后采用UnifiedMemoryManager。

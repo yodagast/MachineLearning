@@ -1,6 +1,6 @@
 ##Git工作流
 - Git常用规范
-（1）使用 Git 过程中，必须通过创建分支进行开发，坚决禁止在主干分支上直接开发。review 的同事有责任检查其他同事是否遵循分支规范。
+（1）使用 Git 过程中，必须通过创建分支进行开发，坚决禁止在master主干分支上直接开发。review 的同事有责任检查其他同事是否遵循分支规范。
 （2）在 Git 中，默认是不会提交空目录的，如果想提交某个空目录到版本库中，需要在该目录下新建一个 .gitignore 的空白文件，就可以提交了。
 （3）把外部文件纳入到自己的 Git 分支来的时候一定要记得是先比对，确认所有修改都是自己修改的，然后再纳入。不然，容易出现代码回溯。
 （4）多人协作时，不要各自在自己的 Git 分支开发，然后发文件合并。正确的方法应该是开一个远程分支，然后一起在远程分支里协作。不然，容易出现代码回溯（即别人的代码被覆盖的情况）。
@@ -11,7 +11,7 @@
 
 （1）Git的命令工作流程图
 ![](/assets/GitFlow.PNG)
-##### 初始化 
+##### 初始化
 git init // 创建
 git clone /path/to/repository // 检出
 git config --global user.email "you@example.com" // 配置 email
@@ -44,7 +44,7 @@ git checkout -- files // 文件从 index 复制到 workspace， B → A
 git checkout HEAD -- files // 文件从 local repository 复制到 workspace， C → A
 
 ##### 分支相关
-git checkout -b branch_name // 创建名叫“branch_name” 的分支，并切换过去 
+git checkout -b branch_name // 创建名叫“branch_name” 的分支，并切换过去
 git checkout master // 切换回主分支
 git branch -d branch_name // 删除名叫“branch_name” 的分支
 git push origin branch_name // 推送分支到远端仓库

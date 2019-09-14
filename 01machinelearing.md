@@ -1,4 +1,4 @@
-# 机器学习的目标函数和评价指标
+### 机器学习的目标函数和评价指标
 
 机器学习的首要问题是选择目标函数，然后采用不同的算法对特征进行模型训练。获得好的结果再部署到实际中去应用。
 
@@ -6,7 +6,7 @@
 
 **目标函数**：不仅要考虑模型的预测值和真实值的差别，还要考虑模型复杂度、过拟合等问题。一般追求score最大、loss最小。通常目标函数不仅要考虑经验风险，还要考虑结构风险。
 
-**损失函数和打分函数：**损失函数是用来量化模型预测值和真实值差距的方式，越小越好，打分函数反之。通常在分类模型（二分类和多分类模型）、回归模型、ranking模型、聚类模型等问题。介绍一些简单的损失函数和得分函数。
+**损失函数和打分函数**：损失函数是用来量化模型预测值和真实值差距的方式，越小越好，打分函数反之。通常在分类模型（二分类和多分类模型）、回归模型、ranking模型、聚类模型等问题。介绍一些简单的损失函数和得分函数。
 
 log-loss: 用于逻辑回归、softmax多分类。
 
@@ -18,9 +18,9 @@ MSE : 用于线性回归损失函数计算。
 
 ROC-score函数：通常只能用于二分类。
 
-f1-score函数：F1 = 2 \* (precision \* recall) / (precision + recall)可以用于二分类和多分类。f1得分还可以分为micro，macro和weight三种打分函数。其中macro是每个类的p和r进行平均计算，micro对于每个实例做平均计算，weight不仅考虑每个类别的precision和recall得分，还考虑类的不均衡性。通常macro-f1使用较多。
+f1-score函数：$$F1 = 2 \frac{precision * recall}{ precision + recall}$$可以用于二分类和多分类。f1得分还可以分为micro，macro和weight三种打分函数。其中macro是每个类的p和r进行平均计算，micro对于每个实例做平均计算，weight不仅考虑每个类别的precision和recall得分，还考虑类的不均衡性。通常macro-f1使用较多。
 
-F-Score 得分：$$ F =(\beta^2+1)\frac{precision * recall}{\beta^2precision + recall} $$。当$$ \beta=1 $$时，F-score即为F1-score。
+F-Score 得分：$$ F =(\beta^2+1)\frac{precision * recall}{\beta^2precision + recall} $$。当$ \beta=1 $时，F-score即为F1-score。
 
 r2-score函数：
 
@@ -30,7 +30,7 @@ r2-score函数：
 
 本章节模型评价指标参考：sklearn metrics[^1]、Spark metics[^2]
 
-**信息检索系统评价：**信息检索系统通常不仅要关注检索结果和检索关键词之间的相关性，还要关注检索结果之间的顺序关系。常见的评价指标包括p@k，MAP，MRR。precision/recall和NDCG等指标。
+**信息检索系统评价**:信息检索系统通常不仅要关注检索结果和检索关键词之间的相关性，还要关注检索结果之间的顺序关系。常见的评价指标包括p@k，MAP，MRR。precision、recall和NDCG等指标。
 
 [http://scikit-learn.org/stable/modules/classes.html\#module-sklearn.metrics](http://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics)
 
