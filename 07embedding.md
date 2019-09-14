@@ -1,17 +1,20 @@
-## **Word2Vec知识点**
+### 图的表示学习算法
 
-**\(1\)基本介绍**
+#### wod2vec
+(1)word2vec原理;(2) n-gram 和skip-gram
+
+**(1)基本介绍**
 
 Word2Vec是一种基本的词向量表示，通过降维将一个高维度的词向量变为低维度的向量表示。Word2Vec可以用来进行聚类、同义词分析、作为其他神经网络模型的输入层等。如果把词作为一个K维度的特征，那么就可以寻找句子、文章的更深层次特征表示。
 
-**\(2\)词向量表示**
+**(2)词向量表示**
 
 * one-hot 词向量表示。对于某个预料库中的词，可以表示为\[0,0,…,1,…,0\]的形式其中的1表示第i个单词在预料库中出现过。
 * TF-IDF 词向量表示。对预料库中的词，第i个词可以被替换成这个词在文档中出现的TF\*IDF值，这和one-hot 的词向量模型相似。
 * 除了基本的TF-IDF，LSA和LDA模型也是常见文本向量模型。
 * Word2Vec 词嵌入。对于one-hot的词表示方法进行降维，将n维度的词向量转化为k维度的词向量进行知识表示（word represetation）。下面介绍如何学习低维度的词向量模型。
 
-**\(3\)N-gram**
+**(3)N-gram**
 
 * CBOW。在自然语言的句子中，如“中国 的 首都 是 北京”预测第3个词语“北京”，可以结合语句的上下文进行预测。
 
@@ -32,3 +35,21 @@ Hierarchical Softmax通过二叉树进行分类，使一连串的二分类用来
 除了Hierarchical Softmax进行模型的预测。作者还如何进行负采样（negative sampling）、如何降低频繁词的概率等方法。详情参考作者的论文和代码。
 参考资料：http://www.cnblogs.com/wei-li/p/Word2Vec.html
 
+#### deepwalk
+- 将随机游走的路径节点作为当前节点的向量表示
+-
+
+#### GCN
+
+#### Attention is All you Need
+
+(1)一个基于Keras实现的Dense Attention
+
+inputs = Input(shape=(input_dims,))
+attention_probs = Dense(input_dims, activation='softmax', name='attention_probs')(inputs)
+attention_mul = merge([inputs, attention_probs], output_shape=input_dims, name='attention_mul', mode='mul')
+
+
+(2)Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。如图是Google Transformer的一个模型框架。
+
+![Attention](/assets/Attention.PNG)
