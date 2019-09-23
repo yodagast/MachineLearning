@@ -36,8 +36,12 @@ Hierarchical Softmax通过二叉树进行分类，使一连串的二分类用来
 除了Hierarchical Softmax进行模型的预测。作者还如何进行负采样（negative sampling）、如何降低频繁词的概率等方法。详情参考作者的论文和代码。
 参考资料：http://www.cnblogs.com/wei-li/p/Word2Vec.html
 
-#### deepwalk
-- 将随机游走的路径节点作为当前节点的向量表示
+#### DeepWalk
+- DeepWalk 思路类似word2vec，使用图中节点与节点之间的共现关系学习节点的向量表示，将随机游走的路径节点作为当前节点的向量表示。
+- DeepWalk包括两个步骤：（1）随机游走采样节点序列，（2）使用skip-gram学习向量表示，采用hierarchy softmax进行超大规模分类的分类器。
+
+#### LINE
+- 定义图中的一阶相似度（直接相连节点的相似度）和二阶相似度（通过公共节点相连的相似度）。
 -
 
 #### GCN
