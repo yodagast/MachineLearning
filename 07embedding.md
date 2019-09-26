@@ -40,21 +40,24 @@ Hierarchical Softmax通过二叉树进行分类，使一连串的二分类用来
 - DeepWalk 思路类似word2vec，使用图中节点与节点之间的共现关系学习节点的向量表示，将随机游走的路径节点作为当前节点的向量表示。
 - DeepWalk包括两个步骤：（1）随机游走采样节点序列，（2）使用skip-gram学习向量表示，采用hierarchy softmax进行超大规模分类的分类器。
 
+#### node2vec
+node2vec是一种综合考虑DFS邻域和BFS邻域的graph embedding方法。按照一定的概率算法来进行有偏的随机游走算法。
+
 #### LINE
 - 定义图中的一阶相似度（直接相连节点的相似度）和二阶相似度（通过公共节点相连的相似度）。
--
+- **一阶相似度**：形式化描述为若$u$, $v$之间存在直连边，则边权$w_{uv}$即为两个顶点的相似度，若不存在直连边，则1阶相似度为0。
+- **二阶相似度**：对于每个顶点维护两个embedding向量，一个是该顶点本身的表示向量，一个是该点作为其他顶点的上下文顶点时的表示向量。对于有向边 $(i,j)$ ，定义给定顶点 $v_i$ 条件下，产生上下文(邻居)顶点 $v_j$ 的概率为
+$$p_2(v_j|v_i)=\frac{exp(c_ju_i)}{\sum_{k=0}^{N}exp(c_ku_i)}$$
 
-#### GCN
+#### GNN
+GNN是将图的邻居节点聚合，并计算得到图中节点的向量。
+$$h_v^k=\sigma(w_k \sum_{u\in N(b)\cup v} \frac{h_u^{k-1}}{\sqrt{|N(u)||N(v)|}})$$
+其中$w_k$是节点$v$在第$k$层的向量表示；$\sigma$是聚合函数，如ReLU。
+- GCN：GCN是谱图卷积的一阶局部近似，是一个多层的图卷积神经网络，每一个卷积层仅处理一阶邻域信息，通过叠加若干卷积层可以实现多阶邻域的信息传递。
+- GraphSage 对GNN进行改进，$AGG$可以选择Mean、Pool、LSTM等不同的聚合函数对参数进行学习。
+$$h_v^k=\sigma(w_kAGG（\{h_u^{k-1},\forall u \in N(v)\} ）$$
+- Graph Attention采用attention的方法学习权重，参数$\alpha_{v,u}$可以用不同的方法定义attention。
+$$h_v^k=\sigma(\sum_{u\in N(b)\cup v}\alpha_{v,u}w^kh_u^{k-1}）$$
 
-#### Attention is All you Need
-
-(1)一个基于Keras实现的Dense Attention
-
-inputs = Input(shape=(input_dims,))
-attention_probs = Dense(input_dims, activation='softmax', name='attention_probs')(inputs)
-attention_mul = merge([inputs, attention_probs], output_shape=input_dims, name='attention_mul', mode='mul')
-
-
-(2)Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。如图是Google Transformer的一个模型框架。
-
-![Attention](/assets/Attention.PNG)
+GraphEmbedding参考资料：https://github.com/shenweichen/GraphEmbedding
+GraphNeuralNetwork参考资料：https://github.com/shenweichen/GraphNeuralNetwork
