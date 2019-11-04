@@ -45,7 +45,10 @@ node2vec是一种综合考虑DFS邻域和BFS邻域的graph embedding方法。按
 
 #### LINE
 - 定义图中的一阶相似度（直接相连节点的相似度）和二阶相似度（通过公共节点相连的相似度）。
-- 
+
+- **一阶相似度**：形式化描述为若$u$, $v$之间存在直连边，则边权$w_{uv}$即为两个顶点的相似度，若不存在直连边，则1阶相似度为0。
+- **二阶相似度**：对于每个顶点维护两个embedding向量，一个是该顶点本身的表示向量，一个是该点作为其他顶点的上下文顶点时的表示向量。对于有向边 $(i,j)$ ，定义给定顶点 $v_i$ 条件下，产生上下文(邻居)顶点 $v_j$ 的概率为
+$$p_2(v_j|v_i)=\frac{exp(c_ju_i)}{\sum_{k=0}^{N}exp(c_ku_i)}$$
 
 #### GCN
 
@@ -67,9 +70,7 @@ attention_mul = merge([inputs, attention_probs], output_shape=input_dims, name='
 
 参考资料：https://github.com/philipperemy/keras-attention-mechanism
 
-- **一阶相似度**：形式化描述为若$u$, $v$之间存在直连边，则边权$w_{uv}$即为两个顶点的相似度，若不存在直连边，则1阶相似度为0。
-- **二阶相似度**：对于每个顶点维护两个embedding向量，一个是该顶点本身的表示向量，一个是该点作为其他顶点的上下文顶点时的表示向量。对于有向边 $(i,j)$ ，定义给定顶点 $v_i$ 条件下，产生上下文(邻居)顶点 $v_j$ 的概率为
-$$p_2(v_j|v_i)=\frac{exp(c_ju_i)}{\sum_{k=0}^{N}exp(c_ku_i)}$$
+
 
 #### GNN
 GNN是将图的邻居节点聚合，并计算得到图中节点的向量。
@@ -83,4 +84,3 @@ $$h_v^k=\sigma(\sum_{u\in N(b)\cup v}\alpha_{v,u}w^kh_u^{k-1}）$$
 
 GraphEmbedding参考资料：https://github.com/shenweichen/GraphEmbedding
 GraphNeuralNetwork参考资料：https://github.com/shenweichen/GraphNeuralNetwork
->>>>>>> d7be1613eab35f3fe8b7d5173f2ae9b1cbc02fc3
