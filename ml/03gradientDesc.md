@@ -9,7 +9,7 @@ $
 {\frac{\partial \varphi}{\partial z}}
 \end{pmatrix} $ (1)
 
-**梯度下降算法**：初始化随机权重weights，求出函数的梯度，并选择学习步长$ \alpha $，更新权重，直到结果收敛。
+**梯度下降算法**：初始化随机权重weights，求出函数的梯度，并选择学习步长$ \alpha $，更新权重，直到结果收敛（通常梯度下降还加入L1和L2正则化目标函数）。
 
 ![](/assets/import_gd.png) (2)
 

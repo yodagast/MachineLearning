@@ -11,3 +11,15 @@ $$Att(query,source)=\sum_{i=0}^n Similarity(query,key_i)value_i $$
 - hard attention:对所有key求权重概率，每个key都有一个对应的权重，是一种全局的计算方式（也可以叫Global Attention）
 - soft attention: 这种方式是直接精准定位到某个key，其余key就都不管了，相当于这个key的概率是1，其余key的概率全部是0。因此这种对齐方式要求很高，要求一步到位，如果没有正确对齐，会带来很大的影响。另一方面，因为不可导，一般需要用强化学习的方法进行训练。（或者使用gumbel softmax之类的）
 - local attention: 对一个窗口区域进行计算。先用Hard方式定位到某个地方，以这个点为中心可以得到一个窗口区域，在这个小区域内用Soft方式来算Attention。
+
+#### Attention is All you Need
+
+(1)一个基于Keras实现的Dense Attention
+>inputs = Input(shape=(input_dims,))
+attention_probs = Dense(input_dims, activation='softmax', name='attention_probs')(inputs)
+attention_mul = merge([inputs, attention_probs], output_shape=input_dims, name='attention_mul', mode='mul')
+
+
+(2)Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。如图是Google Transformer的一个模型框架。
+
+![Attention](/assets/Attention.PNG)
