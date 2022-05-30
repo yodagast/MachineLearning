@@ -50,27 +50,6 @@ node2vec是一种综合考虑DFS邻域和BFS邻域的graph embedding方法。按
 - **二阶相似度**：对于每个顶点维护两个embedding向量，一个是该顶点本身的表示向量，一个是该点作为其他顶点的上下文顶点时的表示向量。对于有向边 $(i,j)$ ，定义给定顶点 $v_i$ 条件下，产生上下文(邻居)顶点 $v_j$ 的概率为
 $$p_2(v_j|v_i)=\frac{exp(c_ju_i)}{\sum_{k=0}^{N}exp(c_ku_i)}$$
 
-#### GCN
-
-#### Attention is All you Need
-(1)encoder & decoder
-- encoder 将原始信息压缩到精髓数据。输入一列向量或者一个矩阵x，经过单层或者多层full connected network, encode成一个向量z，再由这个向量z还原成输入的向量x，也是通过全连接层，然后自定义loss函数，可以用欧式距离或者cross entropy，通过BP训练。
-- decoder 将精髓数据解压到原始数据
-参考资料：https://www.cnblogs.com/peng8098/p/keras_6.html
-
-(2)一个基于Keras实现的Dense Attention
-
-inputs = Input(shape=(input_dims,))
-attention_probs = Dense(input_dims, activation='softmax', name='attention_probs')(inputs)
-attention_mul = merge([inputs, attention_probs], output_shape=input_dims, name='attention_mul', mode='mul')
-
-(3)Attention机制的基本思想是，打破了传统编码器-解码器结构在编解码时都依赖于内部一个固定长度向量的限制。如图是Google Transformer的一个模型框架。
-
-![Attention](/assets/Attention.PNG)
-
-参考资料：https://github.com/philipperemy/keras-attention-mechanism
-
-
 
 #### GNN
 GNN是将图的邻居节点聚合，并计算得到图中节点的向量。

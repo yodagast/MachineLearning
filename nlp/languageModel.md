@@ -1,5 +1,9 @@
-### 词袋模型
+### BOW 词袋模型
 
 ### word2vec（CBOW/Skip-Gram）
 
-### BERT（MaskLM）
+### FastText（CBOW/Skip-Gram）
+
+### BERT（MaskLM/NSP）
+
+### XLnet
